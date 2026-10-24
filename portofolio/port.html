@@ -12,14 +12,14 @@
         <h1>Welcome to My Portfolio</h1>
 
         <nav>
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="skills .html">Skills</a>
-            <a href="projects.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section>
+    <section id="home" class="home">
         <div class="container">
             <div class="content1">
                 <h1>Hello, I'm Anas Tarek</h1>
@@ -38,7 +38,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="about" class="about">
         <div class="about-me">
             <div class="content2">
                 <h2>About Me</h2>
@@ -62,26 +62,43 @@
 
     </section>
 
-    <section>
-        <div class="skills">
-            <h2>My Skills</h2>
-           
-                <div class="thtml">
-                    <img src="" alt="HTML">
-                    <h2>HTML</h2>
+    <section class="skills" id="skills" id="skills">
+        <h2>My Skills</h2>
 
-                </div>
-                <div class="tcss">
-                    <img src="" alt="CSS">
-                    <h2>CSS</h2>
-                </div>
-                <div class="tjs">
-                    <img src="" alt="JavaScript">
-                    <h2>JavaScript</h2>
-                </div>
+        <div class="skills-container">
 
+
+            <div class="skill-box">
+                <h3>HTML</h3>
+                <div class="skill-info">
+                    <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress html-progress"></div>
+                </div>
             </div>
-        
+
+            <div class="skill-box">
+                <h3>CSS</h3>
+                <div class="skill-info">
+                    <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress css-progress"></div>
+                </div>
+            </div>
+
+            <div class="skill-box">
+                <h3>JavaScript</h3>
+                <div class="skill-info">
+                    <span>60%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress js-progress"></div>
+                </div>
+            </div>
+
+        </div>
     </section>
 
 
