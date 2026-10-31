@@ -1,43 +1,72 @@
-const codeCard = document.querySelector(".code-card");
+// =========================
+// PAGE LOADING
+// =========================
 
-window.addEventListener("load", () => {
-    codeCard.style.opacity = "0";
-    codeCard.style.transform = "translateY(20px)";
-
-    setTimeout(() => {
-        codeCard.style.transition = "all 0.8s ease";
-        codeCard.style.opacity = "1";
-        codeCard.style.transform = "translateY(0)";
-    }, 200);
+window.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("loaded");
 });
 
 
+// =========================
+// CODE CARD ANIMATION
+// =========================
 
 window.addEventListener("load", function () {
+
+    const codeCard = document.querySelector(".code-card");
+
+    if (codeCard) {
+        setTimeout(function () {
+            codeCard.classList.add("is-visible");
+        }, 200);
+    }
+
+});
+
+
+// =========================
+// SKILLS ANIMATION
+// =========================
+
+window.addEventListener("load", function () {
+
     const skills = [
-        { id: "html", target: 90 },
-        { id: "css", target: 75 },
-        { id: "js", target: 50 },
+        90,
+        85,
+        85
     ];
 
-    skills.forEach(function (skill) {
-        const progress = document.getElementById(skill.id + "-progress");
-        const percent = document.getElementById(skill.id + "-percent");
+    const skillBoxes = document.querySelectorAll(".skill-box");
+
+    skillBoxes.forEach(function (box, index) {
+
+        const progress = box.querySelector(".progress");
+        const percent = box.querySelector(".skill-info span");
+
+        const target = skills[index];
+
+        if (!progress || !percent || target === undefined) {
+            return;
+        }
 
         let current = 0;
 
+        progress.style.width = "0%";
+
         const interval = setInterval(function () {
-            if (current >= skill.target) {
+
+            if (current >= target) {
                 clearInterval(interval);
                 return;
             }
 
             current++;
+
             progress.style.width = current + "%";
             percent.textContent = current + "%";
-        }, 25);
+
+        }, 20);
+
     });
-});
-window.addEventListener("DOMContentLoaded", function () {
-    document.body.classList.add("loaded");
+
 });
