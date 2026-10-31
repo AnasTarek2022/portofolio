@@ -1,8 +1,23 @@
+const codeCard = document.querySelector(".code-card");
+
+window.addEventListener("load", () => {
+    codeCard.style.opacity = "0";
+    codeCard.style.transform = "translateY(20px)";
+
+    setTimeout(() => {
+        codeCard.style.transition = "all 0.8s ease";
+        codeCard.style.opacity = "1";
+        codeCard.style.transform = "translateY(0)";
+    }, 200);
+});
+
+
+
 window.addEventListener("load", function () {
     const skills = [
         { id: "html", target: 90 },
         { id: "css", target: 75 },
-        { id: "js", target: 50 }
+        { id: "js", target: 50 },
     ];
 
     skills.forEach(function (skill) {
